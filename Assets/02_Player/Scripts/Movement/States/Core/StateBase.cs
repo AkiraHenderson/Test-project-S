@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerStateBase : IState
+public abstract class StateBase : IState
 {
-    protected PlayerMovementController player;
+    protected PlayerMovementController owner;
 
 
-    public PlayerStateBase(PlayerMovementController player)
+    public StateBase(PlayerMovementController owner)
     {
-        this.player = player;
+        this.owner = owner;
     }
 
 

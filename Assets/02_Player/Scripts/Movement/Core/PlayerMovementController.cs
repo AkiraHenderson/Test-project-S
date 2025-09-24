@@ -21,7 +21,9 @@ public class PlayerMovementController : MonoBehaviour
 
 
     public MovementHandler movementHandler = new MovementHandler();
-    public PlayerInputHandler inputHandler;
+    [HideInInspector] public PlayerInputHandler inputHandler;
+    [HideInInspector] public AnimationController animationController;
+
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -30,13 +32,14 @@ public class PlayerMovementController : MonoBehaviour
         animator = GetComponent<Animator>();
         movementHandler.Initialize(rigidBody, boxCollider, transform, obstacleLayer);
 
+        animationController = GetComponent<AnimationController>();
         inputHandler = GetComponent<PlayerInputHandler>();
         inputHandler.Initialize(movementHandler);
     }
     void Start()
     {
         stateMachine = new PlayerStateMachine(this);
-        //stateMachine.Initialize(stateMachine.idleState); // Idle 상태로 시작
+        stateMachine.Initialize(stateMachine.idleState); // Idle 상태로 시작
 
 
     }
@@ -54,5 +57,5 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         movementHandler.Move(inputHandler.MoveInput);
-    }
+    }   
 }

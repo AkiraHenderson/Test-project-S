@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 4503969003863379031}
   - component: {fileID: 4812827674540110544}
   - component: {fileID: 6303519836060464540}
+  - component: {fileID: 462880208369831400}
+  - component: {fileID: 8806512024049097310}
+  - component: {fileID: 4999746799457315474}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -189,6 +192,7 @@ MonoBehaviour:
     wallSlideSpeed: 2
     wallJumpForce: 12
   inputHandler: {fileID: 0}
+  animationController: {fileID: 0}
 --- !u!114 &4812827674540110544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,3 +339,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd5e891aba16c7449daa46ef8f27e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &462880208369831400
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225782874415278823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4375bc224a9dc294894a64c60b8c9d76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8806512024049097310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225782874415278823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72114159227cfad44ad314d1c8859dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paramSet: {fileID: 4999746799457315474}
+--- !u!114 &4999746799457315474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225782874415278823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663546855fe1ca84ba1abcba8e8dae12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 462880208369831400}
+  profile: {fileID: 11400000, guid: 8922d4c39e7be4942bfa53f217be05e0, type: 2}

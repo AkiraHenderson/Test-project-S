@@ -6,14 +6,17 @@ public class PlayerStateMachine
 {
     public IState CurrentState { get; private set; }
 
-    //public Player_Idle idleState;
+    public IdleState idleState;
+    public WalkState walkState;
 
 
     private List<IState> states;
     public PlayerStateMachine(PlayerMovementController player)
     {
         states = new List<IState>();
-        //idleState = AddState<Player_Idle>(player, states);
+        idleState = AddState<IdleState>(player, states);
+        walkState = AddState<WalkState>(player, states);
+
 
     }
     public void Initialize(IState startingState)
